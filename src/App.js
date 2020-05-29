@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Form from './components/Form'
+import Message from './components/Message'
 
-function App() {
+const App = () => {
+  const [isFormValid, setIsFormValid] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="max-w-screen-md mx-auto">
+      <Form isFormValid={isFormValid} setIsFormValid={setIsFormValid} />
+      <Message isFormValid={isFormValid} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
